@@ -1,0 +1,52 @@
+---
+title: "Understanding GDP and Educational Factors from World Bank Data"
+author: "Dennis Murray"
+date: "June 10, 2016"
+knit: (function(inputFile, encoding) { 
+      rmarkdown::render(inputFile,
+                        encoding=encoding,                         output_file='papers/bootstrap.html') } )
+output: html_document
+Keep_md: true
+
+---
+###Introduction
+The World Bank is an international financial organization with the stated objective of ending world poverty, and promoting shared poverty. (Source: Worldbank.org)  
+
+Accompanying this mission, the Bank also collects data about the national economies and incomes of countries in all parts of the world.  This provides a clearinghouse of objectively collected data about each country, and the economic status of their citizens.
+
+Our data set for this review is comprised of two pieces.  
+
+The first provides the Gross Domestic Product (GDP) of 190 countries.  Gross Domestic Product is defined by the World Bank as "sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products."
+
+The second data source from the World Bank provides a host of demographic data regarding the income of the citizens of each country.  
+
+This report will seek to find and explain the relationships between several of these variables, and the differences among GDP between countries.
+
+###Data Import, Cleaning and Merging
+
+```{r}
+source("Environment.R")
+```
+
+```{r}
+source("CleanData1.R")
+```
+
+```{r}
+source("CleanData2.R")
+```
+
+```{r}
+source("MergeData.R")
+```
+
+
+###Question 1: Match the data based on the country shortcode.  How many of the IDs match?
+
+###Question 2: Sort the data frame in ascending order by GDP rank (so United States is last.)  What is the 13th country in the resulting data frame?
+
+###Question 3: What are the average GDP rankings for the "High income: OECD" and "High income: nonOECD" groups?
+
+###Question 4: Plot the GDP for all of the countries.  Use ggplot2 to color your plot by Income Group.
+
+###Question 5: Cut the GDP ranking into 5 separate quantile groups.  Make a table versus Income.Group.  How many countries are Lower Middle income but among the 38 nations with highest GDP?
