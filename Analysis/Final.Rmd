@@ -49,4 +49,10 @@ source("MergeData.R")
 
 ###Question 4: Plot the GDP for all of the countries.  Use ggplot2 to color your plot by Income Group.
 
+```{r GDP by Country with Income Group}
+source("Question4.R")
+```
+
+
+
 ###Question 5: Cut the GDP ranking into 5 separate quantile groups.  Make a table versus Income.Group.  How many countries are Lower Middle income but among the 38 nations with highest GDP?

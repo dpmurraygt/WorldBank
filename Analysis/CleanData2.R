@@ -1,8 +1,8 @@
 #Clean up the Education file to prepare to merge with the GDP file.
 
-#
+#Split Source of Most Recent Income and Expenditure to a Year and 
 
-EDU$Source.of.most.recent.Income.and.expenditure.data
+#EDU$Source.of.most.recent.Income.and.expenditure.data
 
 #Shuffle the columns so it makes more sense when we view it
 

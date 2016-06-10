@@ -30,7 +30,6 @@ GDPFinal<-data.frame(GDP$CountryCode,GDP$GDPRank,GDP$CountryName,GDP$GDPDollarsM
 
 #Apply a sort by GDPDollarsMM2012, descending
 
-GDPFinal<-order(GDPFinal,desc(GDPFinal$GDPDollarsMM2012))
-
+GDPFinal<-GDPFinal[order(-GDPFinal$GDPDollarsMM2012),]
 #fix the field names in GDPFinal
 names(GDPFinal)<-c("CountryCode","GDPRank","CountryName","GDPDollarsMM2012")
