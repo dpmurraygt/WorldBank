@@ -25,25 +25,51 @@ This report will seek to find and explain the relationships between several of t
 ###Data Import, Cleaning and Merging
 
 ```{r}
+setwd("~/R/6306CaseStudyWeek6/Analysis")
 source("Environment.R")
 ```
 
+```{r Load data}
+source("LoadData.R")
+```
+
 ```{r}
+setwd("~/R/6306CaseStudyWeek6/Analysis")
 source("CleanData1.R")
 ```
 
 ```{r}
+setwd("~/R/6306CaseStudyWeek6/Analysis")
 source("CleanData2.R")
 ```
 
 ```{r}
+setwd("~/R/6306CaseStudyWeek6/Analysis")
 source("MergeData.R")
 ```
 
 
 ###Question 1: Match the data based on the country shortcode.  How many of the IDs match?
 
+```{r Join and find Matching IDs}
+source("Question1.R")
+```
+
+The join gave us 210 complete records - with definition of complete here meaning instances where both the Long Name (from the Education data) and the Country Name (from the GDP data) are populated for the record, indicating a successful join.
+
 ###Question 2: Sort the data frame in ascending order by GDP rank (so United States is last.)  What is the 13th country in the resulting data frame?
+
+```{r sort and find the 13th listed country}
+source("Question2.R")
+```
+
+
+
+```{r find the NA values}
+source("Question2a.R")
+```
+
+There are 50 instances of NA values within the 
 
 ###Question 3: What are the average GDP rankings for the "High income: OECD" and "High income: nonOECD" groups?
 

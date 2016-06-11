@@ -2,7 +2,7 @@
 #merging with the education file.
 
 #give the columns names so that we can work more easily with them.
-
+setwd("~/R/6306CaseStudyWeek6")
 names(GDP)<-c("CountryCode","GDPRank","Blank","CountryName","GDPDollarsMM2012")
 
 #remove the commas from the GDP field
@@ -26,10 +26,12 @@ GDP<-GDP[1:216,]
 
 GDPFinal<-data.frame(GDP$CountryCode,GDP$GDPRank,GDP$CountryName,GDP$GDPDollarsMM2012)
 
+#fix the field names in GDPFinal
+names(GDPFinal)<-c("CountryCode","GDPRank","CountryName","GDPDollarsMM2012")
 
+#Should probably clean out any observations with no value for country code and drop
+#the full row
 
 #Apply a sort by GDPDollarsMM2012, descending
 
-GDPFinal<-GDPFinal[order(-GDPFinal$GDPDollarsMM2012),]
-#fix the field names in GDPFinal
-names(GDPFinal)<-c("CountryCode","GDPRank","CountryName","GDPDollarsMM2012")
+GDPFinal <- GDPFinal[order(-GDPFinal$GDPDollarsMM2012),]
