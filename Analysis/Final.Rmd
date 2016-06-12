@@ -73,6 +73,13 @@ There are 50 instances of NA values within the
 
 ###Question 3: What are the average GDP rankings for the "High income: OECD" and "High income: nonOECD" groups?
 
+```{r the means of the groups indicated}
+source("Question3.R")
+```
+
+The High Income: nonOECD Group has a mean rank of 58.65, and the High Income: OECD group has a mean rank of 110.07.  
+The standard deviation of the nonOECD group is also higher than the OECD group, so there may be a more extreme member of the nonOECD group pulling the average lower.
+
 ###Question 4: Plot the GDP for all of the countries.  Use ggplot2 to color your plot by Income Group.
 
 ```{r GDP by Country with Income Group}
@@ -82,3 +89,7 @@ source("Question4.R")
 
 
 ###Question 5: Cut the GDP ranking into 5 separate quantile groups.  Make a table versus Income.Group.  How many countries are Lower Middle income but among the 38 nations with highest GDP?
+
+```{r Quantile analysis}
+
+```

@@ -1,5 +1,6 @@
-#apply a sort, based on GDP descending
-attach((EducationGDP))
+#apply a sort to the dataframe based on GDP ascending
 EducationGDP<-EducationGDP[order(EducationGDP$GDPDollarsMM2012),]
+
+#Find the 13th line of data, this will be the 13th record and
+#return the name of the country.  
 EducationGDP$CountryName[13]
-detach(EducationGDP)

@@ -5,5 +5,5 @@
 CompleteRecords<-EducationGDP$CountryCode[!is.na(EducationGDP$CountryName)&!is.na(EducationGDP$Long.Name)]
 print(length(CompleteRecords))
 #Find cases where Country Code and Long name is complete, but CountryName is missing
-
+sum(is.na(EducationGDP$GDPDollarsMM2012))
 #Find cases where Country Code and Country name is complete, but Long Name is missing
