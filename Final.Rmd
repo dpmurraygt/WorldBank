@@ -35,21 +35,27 @@ We will begin by downloading, and then loading to the R environment, each of the
 ```{r Load data}
 source("Analysis/LoadData.R", echo=TRUE)
 ```
+
+First we will clean up the table with the GDP data.
   
 ```{r}
 source("Analysis/CleanData1.R", echo=TRUE)
 ```
 
+Next we will clean up the table with the Education and Income data.
+
 ```{r}
 source("Analysis/CleanData2.R", echo=TRUE)
 ```
+
+###Question 1: Match the data based on the country shortcode.  How many of the IDs match?
+
+First, we will merge the two files together using the Country code as a key field in each table.
 
 ```{r}
 source("Analysis/MergeData.R", echo=TRUE)
 ```
 
-
-###Question 1: Match the data based on the country shortcode.  How many of the IDs match?
 
 ```{r Join and find Matching IDs}
 source("Analysis/Question1.R", echo=TRUE)
@@ -59,17 +65,21 @@ The join gave us 210 complete records - with definition of complete here meaning
 
 ###Question 2: Sort the data frame in ascending order by GDP rank (so United States is last.)  What is the 13th country in the resulting data frame?
 
+First, we will sort the combined data frame on ascending order and then retrieve the 13th ranked country.
+
 ```{r sort and find the 13th listed country}
 source("Analysis/Question2.R", echo=TRUE)
 ```
 
+St. Kitts and Nevis is the 13th ranked country, with 767 million dollars in GDP in 2012.
 
+Second, we will find the number of values where there is no value for the Gross Domestic Product.
 
 ```{r find the NA values}
 source("Analysis/Question2a.R", echo=TRUE)
 ```
 
-There are 50 instances of NA values within the 
+There are 48 instances of missing value in the GDP field.
 
 ###Question 3: What are the average GDP rankings for the "High income: OECD" and "High income: nonOECD" groups?
 
@@ -80,13 +90,25 @@ source("Analysis/Question3.R", echo=TRUE)
 The High Income: nonOECD Group has a mean rank of 58.65, and the High Income: OECD group has a mean rank of 110.07.  
 The standard deviation of the nonOECD group is also higher than the OECD group, so there may be a more extreme member of the nonOECD group pulling the average lower.
 
+```{r NA in groups}
+source("Analysis/Question3a.R", echo=TRUE)
+```
+
+There are 28 instances of missing either the GDP rank, or the Income Group.
+
 ###Question 4: Plot the GDP for all of the countries.  Use ggplot2 to color your plot by Income Group.
 
-```{r GDP by Country with Income Group}
+```{r out.width='1550px'}
 source("Analysis/Question4.R", echo=TRUE)
 ```
 
+The scale of the visualization shows significant compression of the data on the axis of GDP, due to the significant disparity in value between the lowest (Tuvalu, with a GDP of 40 million) and the United States, with a value of $16,244,600,000.  Fifteen countries have a value over one trillion dollars, out of scale with the remaining 170+ countries.
 
+```{r}
+source("Analysis/Question4a.R")
+```
+
+The visualization of the GDP by Country excludes 48 countries that have no value available for GDP.
 
 ###Question 5: Cut the GDP ranking into 5 separate quantile groups.  Make a table versus Income.Group.  How many countries are Lower Middle income but among the 38 nations with highest GDP?
 
@@ -94,3 +116,10 @@ source("Analysis/Question4.R", echo=TRUE)
 source("Analysis/Question5.R", echo=TRUE)
 ```
 
+There are 16 countries in the group of "Lower Middle Income", but in quantile 1 of GDP.  
+
+```{r NA in quantiles}
+source("Analysis/Question5a.R", echo=TRUE)
+```
+
+There are 49 countries with an empty value in either GDP or Income Group.
