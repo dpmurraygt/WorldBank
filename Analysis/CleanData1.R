@@ -27,16 +27,17 @@ GDP<-GDP[1:216,]
 #Change the GDPRank to a numeric field
 GDP$GDPRank<-as.numeric(GDP$GDPRank)
 
-
+#Create a Final version of the data frame
 
 GDPFinal<-data.frame(GDP$CountryCode,GDP$GDPRank,GDP$CountryName,GDP$GDPDollarsMM2012)
 
 #fix the field names in GDPFinal
 names(GDPFinal)<-c("CountryCode","GDPRank","CountryName","GDPDollarsMM2012")
 
-#Should probably clean out any observations with no value for country code and drop
-#the full row
+#Drop Rows that Do not have a Country Code, since this is required to match
+#and would show the rows that are actually blanks in original file
 
+GDPFinal<-GDPFinal[GDPFinal$CountryCode!="",]
 
 #Apply a sort by GDPDollarsMM2012, descending
 

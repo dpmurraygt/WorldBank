@@ -11,3 +11,4 @@
 
 
 EDUFinal<-EDU
+names(EDUFinal)<-c("CountryCode","LongName","IncomeGroup","Region","LendingCategory","OtherGroups","CurrencyUnit","LatestPopulationCensus","LatestHouseholdSurvey","SpecialNotes","NationalAccountsBaseYear","NationalAccountsReferenceYear","SystemOfNationalAccounts","SNAPriceValuation","AlternativeConversionFactor","PPPSurveyYear","BalanceOfPaymentsManualInUse","ExternalDebtReportingStatus","SystemOfTrade","GovernmentAccountingConcept","IMFDataDisseminationStandard","SourceOfMostRecentIncomeandExpenditureData","VitalRegistrationComplete","LatestAgriculturalCensus","LatestIndustrialData","LatestTradeData","LatestWaterWithdrawalData","X2AlphaCode","WB2Code","TableName","ShortName")

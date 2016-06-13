@@ -24,32 +24,27 @@ This report will seek to find and explain the relationships between several of t
 
 ###Data Import, Cleaning and Merging
 
-```{r}
-PATH.0 <- Sys.getenv("PATH")
-PATH.1 <- paste(PATH.0, ";C:\\Perl\\bin;C:\\Perl64\\bin;C:\\Perl\\site\\bin;C:\\Perl64\\site\\bin")
-Sys.setenv("PATH"=PATH.1) 
-```
+We will require several packages within R to load, process, and visualize the data from the World Bank.  These include dplyr, repmis and ggplot2.
 
 ```{r set the environment}
-source('~/R/6306CaseStudyWeek6/Analysis/Environment.R', echo=TRUE)
+source("Analysis/Environment.R", echo=TRUE)
 ```
+
+We will begin by downloading, and then loading to the R environment, each of the data files from the World Bank.
 
 ```{r Load data}
 source("Analysis/LoadData.R", echo=TRUE)
 ```
   
 ```{r}
-setwd('"~/6306CaseStudyWeek6'..')
 source("Analysis/CleanData1.R", echo=TRUE)
 ```
 
 ```{r}
-#setwd("~/R/6306CaseStudyWeek6/Analysis")
 source("Analysis/CleanData2.R", echo=TRUE)
 ```
 
 ```{r}
-#setwd("~/R/6306CaseStudyWeek6/Analysis")
 source("Analysis/MergeData.R", echo=TRUE)
 ```
 
@@ -65,7 +60,7 @@ The join gave us 210 complete records - with definition of complete here meaning
 ###Question 2: Sort the data frame in ascending order by GDP rank (so United States is last.)  What is the 13th country in the resulting data frame?
 
 ```{r sort and find the 13th listed country}
-source("Analaysis/Question2.R", echo=TRUE)
+source("Analysis/Question2.R", echo=TRUE)
 ```
 
 

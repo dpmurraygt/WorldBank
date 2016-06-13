@@ -4,11 +4,11 @@
 
 #call the ntile function from dplyr to split the GDP into n=5 groups
 
-GDPSub<-data.frame(EducationGDP$GDPDollarsMM2012,EducationGDP$CountryCode,EducationGDP$Income.Group)
+GDPSub<-data.frame(EducationGDP$GDPDollarsMM2012,EducationGDP$CountryCode,EducationGDP$IncomeGroup)
 
 GDPSub<-GDPSub[complete.cases(GDPSub),]
 
-GDPQuantile<-data.frame(ntile(GDPSub$EducationGDP.GDPDollarsMM2012,n=5),GDPSub$EducationGDP.GDPDollarsMM2012,GDPSub$EducationGDP.CountryCode,GDPSub$EducationGDP.Income.Group)
+GDPQuantile<-data.frame(ntile(GDPSub$EducationGDP.GDPDollarsMM2012,n=5),GDPSub$EducationGDP.GDPDollarsMM2012,GDPSub$EducationGDP.CountryCode,GDPSub$EducationGDP.IncomeGroup)
 
 names(GDPQuantile)<-c("Quantile","GDP","CountryCode","IncomeGroup")
 
