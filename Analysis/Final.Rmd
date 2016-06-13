@@ -4,7 +4,7 @@ author: "Dennis Murray"
 date: "June 10, 2016"
 knit: (function(inputFile, encoding) { 
       rmarkdown::render(inputFile,
-                        encoding=encoding,                         output_file='papers/bootstrap.html') } )
+                        encoding=encoding,                         output_file='papers/WorldBank.html') } )
 output: html_document
 Keep_md: true
 
@@ -25,34 +25,39 @@ This report will seek to find and explain the relationships between several of t
 ###Data Import, Cleaning and Merging
 
 ```{r}
-setwd("~/R/6306CaseStudyWeek6/Analysis")
-source("Environment.R")
+PATH.0 <- Sys.getenv("PATH")
+PATH.1 <- paste(PATH.0, ";C:\\Perl\\bin;C:\\Perl64\\bin;C:\\Perl\\site\\bin;C:\\Perl64\\site\\bin")
+Sys.setenv("PATH"=PATH.1) 
+```
+
+```{r set the environment}
+source('~/R/6306CaseStudyWeek6/Analysis/Environment.R', echo=TRUE)
 ```
 
 ```{r Load data}
-source("LoadData.R")
+source("Analysis/LoadData.R", echo=TRUE)
+```
+  
+```{r}
+setwd('"~/6306CaseStudyWeek6'..')
+source("Analysis/CleanData1.R", echo=TRUE)
 ```
 
 ```{r}
-setwd("~/R/6306CaseStudyWeek6/Analysis")
-source("CleanData1.R")
+#setwd("~/R/6306CaseStudyWeek6/Analysis")
+source("Analysis/CleanData2.R", echo=TRUE)
 ```
 
 ```{r}
-setwd("~/R/6306CaseStudyWeek6/Analysis")
-source("CleanData2.R")
-```
-
-```{r}
-setwd("~/R/6306CaseStudyWeek6/Analysis")
-source("MergeData.R")
+#setwd("~/R/6306CaseStudyWeek6/Analysis")
+source("Analysis/MergeData.R", echo=TRUE)
 ```
 
 
 ###Question 1: Match the data based on the country shortcode.  How many of the IDs match?
 
 ```{r Join and find Matching IDs}
-source("Question1.R")
+source("Analysis/Question1.R", echo=TRUE)
 ```
 
 The join gave us 210 complete records - with definition of complete here meaning instances where both the Long Name (from the Education data) and the Country Name (from the GDP data) are populated for the record, indicating a successful join.
@@ -60,13 +65,13 @@ The join gave us 210 complete records - with definition of complete here meaning
 ###Question 2: Sort the data frame in ascending order by GDP rank (so United States is last.)  What is the 13th country in the resulting data frame?
 
 ```{r sort and find the 13th listed country}
-source("Question2.R")
+source("Analaysis/Question2.R", echo=TRUE)
 ```
 
 
 
 ```{r find the NA values}
-source("Question2a.R")
+source("Analysis/Question2a.R", echo=TRUE)
 ```
 
 There are 50 instances of NA values within the 
@@ -74,7 +79,7 @@ There are 50 instances of NA values within the
 ###Question 3: What are the average GDP rankings for the "High income: OECD" and "High income: nonOECD" groups?
 
 ```{r the means of the groups indicated}
-source("Question3.R")
+source("Analysis/Question3.R", echo=TRUE)
 ```
 
 The High Income: nonOECD Group has a mean rank of 58.65, and the High Income: OECD group has a mean rank of 110.07.  
@@ -83,7 +88,7 @@ The standard deviation of the nonOECD group is also higher than the OECD group, 
 ###Question 4: Plot the GDP for all of the countries.  Use ggplot2 to color your plot by Income Group.
 
 ```{r GDP by Country with Income Group}
-source("Question4.R")
+source("Analysis/Question4.R", echo=TRUE)
 ```
 
 
@@ -91,6 +96,6 @@ source("Question4.R")
 ###Question 5: Cut the GDP ranking into 5 separate quantile groups.  Make a table versus Income.Group.  How many countries are Lower Middle income but among the 38 nations with highest GDP?
 
 ```{r Quantile analysis}
-source("Question5.R")
+source("Analysis/Question5.R", echo=TRUE)
 ```
 
