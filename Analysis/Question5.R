@@ -8,4 +8,10 @@ GDPSub<-data.frame(EducationGDP$GDPDollarsMM2012,EducationGDP$CountryCode,Educat
 
 GDPSub<-GDPSub[complete.cases(GDPSub),]
 
-GDPQuantile<-data.frame(ntile(EducationGDP$GDPDollarsMM2012,5),EducationGDP$CountryCode,EducationGDP$Income.Group)
+GDPQuantile<-data.frame(ntile(GDPSub$EducationGDP.GDPDollarsMM2012,n=5),GDPSub$EducationGDP.GDPDollarsMM2012,GDPSub$EducationGDP.CountryCode,GDPSub$EducationGDP.Income.Group)
+
+names(GDPQuantile)<-c("Quantile","GDP","CountryCode","IncomeGroup")
+
+CrossGDP<-xtabs(~GDPQuantile$Quantile+GDPQuantile$IncomeGroup)
+
+CrossGDP

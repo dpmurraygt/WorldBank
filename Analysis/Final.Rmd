@@ -91,5 +91,6 @@ source("Question4.R")
 ###Question 5: Cut the GDP ranking into 5 separate quantile groups.  Make a table versus Income.Group.  How many countries are Lower Middle income but among the 38 nations with highest GDP?
 
 ```{r Quantile analysis}
-
+source("Question5.R")
 ```
+
