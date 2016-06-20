@@ -6,3 +6,5 @@ Please find the final Markdown document as "Final.Rmd" in the root directory for
 All data files are in the /Data Directory.
 
 All R scripts are containined in /Analysis Directory and called in order from the markdown document "Final.Rmd".
+
+The readable markdown is available in the CaseStudy.md document.
