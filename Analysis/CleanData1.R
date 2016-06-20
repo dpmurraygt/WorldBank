@@ -26,6 +26,8 @@ GDPcut<-GDP[1:216,]
 #two step process as going straight to Numeric changed values for some of the 
 #rows of data.  First move it to a character
 GDPcut$GDPRank<-as.character(GDPcut$GDPRank)
+
+
 #and then move it to a numeric value
 GDPcut$GDPRank<-as.numeric(GDPcut$GDPRank)
 

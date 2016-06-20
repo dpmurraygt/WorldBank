@@ -209,8 +209,6 @@ $(document).ready(function () {
 <p>First, we will merge the two files together using the Country code as a key field in each table.</p>
 <pre class="r"><code>source(&quot;Analysis/MergeData.R&quot;, echo=TRUE)</code></pre>
 <pre><code>## 
-## &gt; library(dplyr)
-## 
 ## &gt; EducationGDP &lt;- full_join(EDUFinal, GDPFinal, by = &quot;CountryCode&quot;)</code></pre>
 <pre><code>## Warning in outer_join_impl(x, y, by$x, by$y): joining factors with
 ## different levels, coercing to character vector</code></pre>

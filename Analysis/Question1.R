@@ -3,7 +3,8 @@
 #subset the dataframe based on having CountryName and Long.Name both populated
 
 CompleteRecords<-EducationGDP$CountryCode[!is.na(EducationGDP$CountryName)&!is.na(EducationGDP$LongName)]
+
+#Find the Total Number of records that have both country name and Long name
+
 print(length(CompleteRecords))
-#Find cases where Country Code and Long name is complete, but CountryName is missing
-sum(is.na(EducationGDP$GDPDollarsMM2012))
-#Find cases where Country Code and Country name is complete, but Long Name is missing
+

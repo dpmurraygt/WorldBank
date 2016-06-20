@@ -71,6 +71,8 @@ First, we will sort the combined data frame on ascending order and then retrieve
 source("Analysis/Question2.R", echo=TRUE)
 ```
 
+After sorting the data in ascending GDP Rank Order, we can see the lowest country, Tuvalu, is in the first row of the data frame.
+
 St. Kitts and Nevis is the 13th ranked country, with 767 million dollars in GDP in 2012.
 
 Second, we will find the number of values where there is no value for the Gross Domestic Product.

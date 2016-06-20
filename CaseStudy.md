@@ -146,8 +146,6 @@ source("Analysis/MergeData.R", echo=TRUE)
 
 ```
 ## 
-## > library(dplyr)
-## 
 ## > EducationGDP <- full_join(EDUFinal, GDPFinal, by = "CountryCode")
 ```
 
