@@ -14,22 +14,24 @@ GDP$GDPDollarsMM2012<-gsub(",","",GDP$GDPDollarsMM2012)
 
 GDP$GDPDollarsMM2012<-as.numeric(GDP$GDPDollarsMM2012)
 
-#tail(GDP,100)
-
+#through investigation using tail() I found blank lines and summary data at the 
+#end of the file.
 #drop lines 232-326...these are blank
-GDP<-GDP[1:232,]
-
 #lines 216-232 are summary data, we can exclude those as well
-GDP<-GDP[1:216,]
+GDPcut<-GDP[1:216,]
 
 #drop v3, v6-v10 as these are empty vectors
 
 #Change the GDPRank to a numeric field
-GDP$GDPRank<-as.numeric(GDP$GDPRank)
+#two step process as going straight to Numeric changed values for some of the 
+#rows of data.  First move it to a character
+GDPcut$GDPRank<-as.character(GDPcut$GDPRank)
+#and then move it to a numeric value
+GDPcut$GDPRank<-as.numeric(GDPcut$GDPRank)
 
 #Create a Final version of the data frame
 
-GDPFinal<-data.frame(GDP$CountryCode,GDP$GDPRank,GDP$CountryName,GDP$GDPDollarsMM2012)
+GDPFinal<-data.frame(GDPcut$CountryCode,GDPcut$GDPRank,GDPcut$CountryName,GDPcut$GDPDollarsMM2012)
 
 #fix the field names in GDPFinal
 names(GDPFinal)<-c("CountryCode","GDPRank","CountryName","GDPDollarsMM2012")

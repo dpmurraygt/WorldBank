@@ -12,8 +12,8 @@ setwd("~/R/6306CaseStudyWeek6/Data")
 
 #download the data to temporary files in the working directory
 
-download.file(GDPurl,"GDP.csv")
-download.file(EDUurl,"education.csv")
+#download.file(GDPurl,"GDP.csv")
+#download.file(EDUurl,"education.csv")
 
 #Read the GDP file from the csv file into a data frame.  We will skip the first five lines of the file as
 #they do not contain usable data, and there are not usable headers that we can import so set that argument

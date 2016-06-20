@@ -1,14 +1,12 @@
 #Clean up the Education file to prepare to merge with the GDP file.
 
-#Split Source of Most Recent Income and Expenditure to a Year and 
+#select the columns that we will actually use in the analysis
+EDUFinal<-data.frame(EDU$CountryCode,EDU$Long.Name,EDU$Income.Group,EDU$Region)
 
-#EDU$Source.of.most.recent.Income.and.expenditure.data
+#Clean up the Names to make them easier to work with
+names(EDUFinal)<-c("CountryCode","LongName","IncomeGroup","Region")
+
+#names(EDUFinal)<-c("CountryCode","LongName","IncomeGroup","Region","LendingCategory","OtherGroups","CurrencyUnit","LatestPopulationCensus","LatestHouseholdSurvey","SpecialNotes","NationalAccountsBaseYear","NationalAccountsReferenceYear","SystemOfNationalAccounts","SNAPriceValuation","AlternativeConversionFactor","PPPSurveyYear","BalanceOfPaymentsManualInUse","ExternalDebtReportingStatus","SystemOfTrade","GovernmentAccountingConcept","IMFDataDisseminationStandard","SourceOfMostRecentIncomeandExpenditureData","VitalRegistrationComplete","LatestAgriculturalCensus","LatestIndustrialData","LatestTradeData","LatestWaterWithdrawalData","X2AlphaCode","WB2Code","TableName","ShortName")
+
 
 #Shuffle the columns so it makes more sense when we view it
-
-
-#EDUFinal<-data.frame(EDU$CountryCode,EDU$EDU$Long.Name,EDU$Short.Name,EDU$Table.Name,EDU$Region,EDU$Income.Group,EDU$Lending.category,EDU$Other.groups,EDU$Other.groups,EDU$Currency.Unit,EDU$Latest.population.census,EDU$Latest.household.survey,EDU$Latest.household.survey,EDU$National.accounts.base.year,EDU$National.accounts.reference.year,EDU$System.of.National.Accounts, EDU$SNA.price.valuation, EDU$Alternative.conversion.factor, EDU$PPP.survey.year, EDU$Balance.of.Payments.Manual.in.use, EDU$External.debt.Reporting.status, EDU$System.of.trade, EDU$Government.Accounting.concept, EDU$IMF.data.dissemination.standard, EDU$Source.of.most.recent.Income.and.expenditure.data, EDU$Vital.registration.complete, EDU$Latest.agricultural.census, EDU$Latest.industrial.data, EDU$Latest.trade.data, EDU$Latest.water.withdrawal.data, EDU$X2.alpha.code, EDU$WB.2.code)
-
-
-EDUFinal<-EDU
-names(EDUFinal)<-c("CountryCode","LongName","IncomeGroup","Region","LendingCategory","OtherGroups","CurrencyUnit","LatestPopulationCensus","LatestHouseholdSurvey","SpecialNotes","NationalAccountsBaseYear","NationalAccountsReferenceYear","SystemOfNationalAccounts","SNAPriceValuation","AlternativeConversionFactor","PPPSurveyYear","BalanceOfPaymentsManualInUse","ExternalDebtReportingStatus","SystemOfTrade","GovernmentAccountingConcept","IMFDataDisseminationStandard","SourceOfMostRecentIncomeandExpenditureData","VitalRegistrationComplete","LatestAgriculturalCensus","LatestIndustrialData","LatestTradeData","LatestWaterWithdrawalData","X2AlphaCode","WB2Code","TableName","ShortName")

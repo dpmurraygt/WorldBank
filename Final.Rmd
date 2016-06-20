@@ -4,7 +4,7 @@ author: "Dennis Murray"
 date: "June 10, 2016"
 knit: (function(inputFile, encoding) { 
       rmarkdown::render(inputFile,
-                        encoding=encoding,                         output_file='papers/WorldBank.html') } )
+                        encoding=encoding,                         output_file='papers/CaseStudy.html') } )
 output:
   html_document:
     keep_md: true
@@ -87,14 +87,14 @@ There are 48 instances of missing value in the GDP field.
 source("Analysis/Question3.R", echo=TRUE)
 ```
 
-The High Income: nonOECD Group has a mean rank of 58.65, and the High Income: OECD group has a mean rank of 110.07.  
-The standard deviation of the nonOECD group is also higher than the OECD group, so there may be a more extreme member of the nonOECD group pulling the average lower.
+The High Income: nonOECD Group has a mean rank of 32.97, and the High Income: OECD group has a mean rank of 91.9.  
+The standard deviation of the nonOECD group is also higher than the OECD group, so there may be some skew to the data of the nonOECD countries.
 
 ```{r NA in groups}
 source("Analysis/Question3a.R", echo=TRUE)
 ```
 
-There are 28 instances of missing either the GDP rank, or the Income Group.
+There are 49 instances of missing either the GDP rank, or the Income Group.
 
 ###Question 4: Plot the GDP for all of the countries.  Use ggplot2 to color your plot by Income Group.
 
@@ -102,7 +102,15 @@ There are 28 instances of missing either the GDP rank, or the Income Group.
 source("Analysis/Question4.R", echo=TRUE)
 ```
 
-The scale of the visualization shows significant compression of the data on the axis of GDP, due to the significant disparity in value between the lowest (Tuvalu, with a GDP of 40 million) and the United States, with a value of $16,244,600,000.  Fifteen countries have a value over one trillion dollars, out of scale with the remaining 170+ countries.
+The scale of the visualization shows significant compression of the data on the axis of GDP, due to the significant disparity in value between the lowest (Tuvalu, with a GDP of 40 million) and the United States, with a value of $16,244,600,000.  Fifteen countries have a value over one trillion dollars, out of scale with the remaining 170+ countries.  Sixty countries have less than one billion dollars in gross domestic product as of 2012.
+
+Most of the top ranked countries are in the highest income groups, with the notable of exception of the second ranked country, China.
+
+If we remove the top 15 countries from the visualization, and replot again,  a greater amount of the variability Gross Domestic Product of the countries ranked 16-190 in the world.  It also appears that most of the lower GDP countries fall into the "Lower Middle Income" or "Low Income" groups, but there are a few higher income countries in the lower tiers.
+```{r out.width='1000px'}
+source("Analysis/Question4b.R", echo=TRUE)
+```
+
 
 ```{r}
 source("Analysis/Question4a.R")
@@ -116,10 +124,19 @@ The visualization of the GDP by Country excludes 48 countries that have no value
 source("Analysis/Question5.R", echo=TRUE)
 ```
 
-There are 16 countries in the group of "Lower Middle Income", but in quantile 1 of GDP.  
+There are 16 countries in the group of "Lower Middle Income", but in quantile 1 of GDP. This would raise the question of where the income created from the gross domestic product is going.  Additionally, there are 11 countries in the top quantile of GDP, but classified as Low Income. 
 
 ```{r NA in quantiles}
 source("Analysis/Question5a.R", echo=TRUE)
 ```
 
 There are 49 countries with an empty value in either GDP or Income Group.
+
+###Conclusions
+The World Bank data provides insights into the Gross Domestic Product, as well as qualitative data about the countries of the world.
+
+From examining the data, we have found a sizable disaparity in the GDP of the top 15 countries, and the remaining 170 countries of the World.  The Top 15 have gross domestic poroduct in excess of one trillion US Dollars, while sixty countries have less than one billion dollars in gross domestic product.  
+
+Income classification does not necessarily follow the Gross Domestic Product output, either.  Among the top 38 countries in the world, 16 are classified by the World Bank as "Lower Middle Income" or "Low Income." This may show a disparity in the income of the citizens, versus the product created, with either government or a handful of individuals absorbing the value created by the country's economy.
+
+Further investigation into the subject could take the path of examining the income classifications in further depth, or developing a more quantitative measure for income.
