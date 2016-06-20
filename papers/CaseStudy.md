@@ -1,6 +1,7 @@
 # Understanding GDP and Educational Factors from World Bank Data
 Dennis Murray  
 June 10, 2016  
+
 ###Introduction
 The World Bank is an international financial organization with the stated objective of ending world poverty, and promoting shared poverty. (Source: Worldbank.org)  
 
@@ -93,13 +94,6 @@ source("Analysis/CleanData1.R", echo=TRUE)
 ## > GDP$GDPDollarsMM2012 <- gsub(",", "", GDP$GDPDollarsMM2012)
 ## 
 ## > GDP$GDPDollarsMM2012 <- as.numeric(GDP$GDPDollarsMM2012)
-```
-
-```
-## Warning: NAs introduced by coercion
-```
-
-```
 ## 
 ## > GDPcut <- GDP[1:216, ]
 ## 
@@ -149,11 +143,6 @@ source("Analysis/MergeData.R", echo=TRUE)
 ## > library(dplyr)
 ## 
 ## > EducationGDP <- full_join(EDUFinal, GDPFinal, by = "CountryCode")
-```
-
-```
-## Warning in outer_join_impl(x, y, by$x, by$y): joining factors with
-## different levels, coercing to character vector
 ```
 
 
@@ -313,7 +302,7 @@ source("Analysis/Question4.R", echo=TRUE)
 ## +     y = "2012 GDP, $MM", x = "Country Code")
 ```
 
-![](papers\CaseStudy_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](papers/Figs/unnamed-chunk-4-1.png)<!-- -->
 
 The scale of the visualization shows significant compression of the data on the axis of GDP, due to the significant disparity in value between the lowest (Tuvalu, with a GDP of 40 million) and the United States, with a value of $16,244,600,000.  Fifteen countries have a value over one trillion dollars, out of scale with the remaining 170+ countries.  Sixty countries have less than one billion dollars in gross domestic product as of 2012.
 
@@ -349,7 +338,7 @@ source("Analysis/Question4b.R", echo=TRUE)
 ## +     y = "2012 GDP, $MM", x = "Country Code")
 ```
 
-![](papers\CaseStudy_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](papers/Figs/unnamed-chunk-5-1.png)<!-- -->
 
 
 
