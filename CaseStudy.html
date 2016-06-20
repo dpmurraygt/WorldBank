@@ -218,10 +218,7 @@ $(document).ready(function () {
 ## +     !is.na(EducationGDP$LongName)]
 ## 
 ## &gt; print(length(CompleteRecords))
-## [1] 210
-## 
-## &gt; sum(is.na(EducationGDP$GDPDollarsMM2012))
-## [1] 48</code></pre>
+## [1] 210</code></pre>
 <p>The join gave us 210 complete records - with definition of complete here meaning instances where both the Long Name (from the Education data) and the Country Name (from the GDP data) are populated for the record, indicating a successful join.</p>
 </div>
 <div id="question-2-sort-the-data-frame-in-ascending-order-by-gdp-rank-so-united-states-is-last.-what-is-the-13th-country-in-the-resulting-data-frame" class="section level3">
@@ -270,6 +267,7 @@ $(document).ready(function () {
 ## &gt; EducationGDP$CountryName[13]
 ## [1] St. Kitts and Nevis
 ## 229 Levels:    East Asia &amp; Pacific   Euro area ... Zimbabwe</code></pre>
+<p>After sorting the data in ascending GDP Rank Order, we can see the lowest country, Tuvalu, is in the first row of the data frame.</p>
 <p>St. Kitts and Nevis is the 13th ranked country, with 767 million dollars in GDP in 2012.</p>
 <p>Second, we will find the number of values where there is no value for the Gross Domestic Product.</p>
 <pre class="r"><code>source(&quot;Analysis/Question2a.R&quot;, echo=TRUE)</code></pre>

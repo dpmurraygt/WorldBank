@@ -167,9 +167,6 @@ source("Analysis/Question1.R", echo=TRUE)
 ## 
 ## > print(length(CompleteRecords))
 ## [1] 210
-## 
-## > sum(is.na(EducationGDP$GDPDollarsMM2012))
-## [1] 48
 ```
 
 The join gave us 210 complete records - with definition of complete here meaning instances where both the Long Name (from the Education data) and the Country Name (from the GDP data) are populated for the record, indicating a successful join.
@@ -227,6 +224,8 @@ source("Analysis/Question2.R", echo=TRUE)
 ## [1] St. Kitts and Nevis
 ## 229 Levels:    East Asia & Pacific   Euro area ... Zimbabwe
 ```
+
+After sorting the data in ascending GDP Rank Order, we can see the lowest country, Tuvalu, is in the first row of the data frame.
 
 St. Kitts and Nevis is the 13th ranked country, with 767 million dollars in GDP in 2012.
 
