@@ -1,7 +1,6 @@
 # Understanding GDP and Educational Factors from World Bank Data
 Dennis Murray  
 June 10, 2016  
-
 ###Introduction
 The World Bank is an international financial organization with the stated objective of ending world poverty, and promoting shared poverty. (Source: Worldbank.org)  
 
