@@ -98,7 +98,7 @@ There are 49 instances of missing either the GDP rank, or the Income Group.
 
 ###Question 4: Plot the GDP for all of the countries.  Use ggplot2 to color your plot by Income Group.
 
-```{r ggplotOfGDP}
+```{r}
 source("Analysis/Question4.R", echo=TRUE)
 ```
 
@@ -107,7 +107,7 @@ The scale of the visualization shows significant compression of the data on the 
 Most of the top ranked countries are in the highest income groups, with the notable of exception of the second ranked country, China.
 
 If we remove the top 15 countries from the visualization, and replot again,  a greater amount of the variability Gross Domestic Product of the countries ranked 16-190 in the world.  It also appears that most of the lower GDP countries fall into the "Lower Middle Income" or "Low Income" groups, but there are a few higher income countries in the lower tiers.
-```{r out.width='1000px'}
+```{r}
 source("Analysis/Question4b.R", echo=TRUE)
 ```
 
