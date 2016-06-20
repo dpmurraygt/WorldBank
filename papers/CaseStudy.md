@@ -309,7 +309,7 @@ source("Analysis/Question4.R", echo=TRUE)
 ## +     y = "2012 GDP, $MM", x = "Country Code")
 ```
 
-<img src="papers\CaseStudy_files/figure-html/unnamed-chunk-4-1.png" width="1000px" />
+![](papers\CaseStudy_files/figure-html/ggplotOfGDP-1.png)<!-- -->
 
 The scale of the visualization shows significant compression of the data on the axis of GDP, due to the significant disparity in value between the lowest (Tuvalu, with a GDP of 40 million) and the United States, with a value of $16,244,600,000.  Fifteen countries have a value over one trillion dollars, out of scale with the remaining 170+ countries.  Sixty countries have less than one billion dollars in gross domestic product as of 2012.
 
@@ -345,7 +345,7 @@ source("Analysis/Question4b.R", echo=TRUE)
 ## +     y = "2012 GDP, $MM", x = "Country Code")
 ```
 
-<img src="papers\CaseStudy_files/figure-html/unnamed-chunk-5-1.png" width="1000px" />
+<img src="papers\CaseStudy_files/figure-html/unnamed-chunk-4-1.png" width="1000px" />
 
 
 

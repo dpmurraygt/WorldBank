@@ -98,7 +98,7 @@ There are 49 instances of missing either the GDP rank, or the Income Group.
 
 ###Question 4: Plot the GDP for all of the countries.  Use ggplot2 to color your plot by Income Group.
 
-```{r out.width='1000px'}
+```{r ggplotOfGDP}
 source("Analysis/Question4.R", echo=TRUE)
 ```
 
